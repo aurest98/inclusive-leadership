@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An interactive overview of inclusive leadership, belongingness, uniqueness, practices, strengths, limitations, and applications.">
+<title>Inclusive Leadership | Belong. Contribute. Thrive.</title>
+<style>
+:root{
+  --navy:#102a43; --blue:#176b87; --teal:#2a9d8f; --mint:#dff4ee;
+  --gold:#f4b942; --coral:#e76f51; --cream:#fbfaf7; --ink:#17212b;
+  --muted:#596773; --line:#d7e1e7; --card:#ffffff; --focus:#7c3aed;
+  --shadow:0 14px 34px rgba(16,42,67,.12); --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+a{color:inherit}.skip{position:absolute;left:-9999px;top:auto}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.8rem 1rem;z-index:1000;border:3px solid var(--focus)}
+header{background:linear-gradient(130deg,#0d2942 0%,#135a73 60%,#218d82 100%);color:#fff;padding:1rem 5vw 5.5rem;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;width:420px;height:420px;border:70px solid rgba(255,255,255,.06);border-radius:50%;right:-150px;top:-140px}
+nav{max-width:1120px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;position:relative;z-index:2}.brand{font-weight:800;letter-spacing:.02em}.navlinks{display:flex;gap:1rem;flex-wrap:wrap}.navlinks a{text-decoration:none;font-weight:650;font-size:.92rem;padding:.4rem .65rem;border-radius:999px}.navlinks a:hover,.navlinks a:focus{background:rgba(255,255,255,.15)}
+.hero{max-width:1120px;margin:5rem auto 0;display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:center;position:relative;z-index:2}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-weight:800;font-size:.78rem;color:#b8f0e4}.hero h1{font-size:clamp(3rem,8vw,6.4rem);line-height:.92;margin:.5rem 0 1.25rem;letter-spacing:-.055em}.hero p{font-size:1.16rem;max-width:650px;color:#e5f2f5}.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem}.btn{border:0;border-radius:999px;padding:.8rem 1.1rem;font-weight:800;cursor:pointer;font:inherit}.btn-primary{background:var(--gold);color:#18222b}.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}.btn:focus-visible,button:focus-visible,a:focus-visible{outline:4px solid #c4b5fd;outline-offset:3px}
+.hero-mark{display:grid;place-items:center}.rings{width:min(330px,70vw);aspect-ratio:1;border-radius:50%;border:2px solid rgba(255,255,255,.4);display:grid;place-items:center;position:relative}.rings:before{content:"";position:absolute;inset:14%;border-radius:50%;border:2px solid rgba(255,255,255,.45)}.rings span{width:48%;aspect-ratio:1;border-radius:50%;background:var(--gold);color:#16212b;display:grid;place-items:center;text-align:center;font-weight:900;line-height:1.1;padding:1rem;box-shadow:0 0 0 13px rgba(255,255,255,.1)}
+main{max-width:1120px;margin:auto;padding:0 5vw 4rem}section{padding:5.5rem 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}.section-head{max-width:720px;margin-bottom:2rem}.kicker{color:var(--blue);text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:900}.section-head h2{font-size:clamp(2rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.035em;margin:.4rem 0 1rem}.lead{font-size:1.12rem;color:var(--muted)}
+.pill-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}.pill{background:var(--mint);color:#145448;border-radius:999px;padding:.55rem .9rem;font-weight:800}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.quad{min-height:210px;border:2px solid var(--line);background:var(--card);border-radius:var(--radius);padding:1.4rem;text-align:left;cursor:pointer;box-shadow:0 6px 18px rgba(16,42,67,.06);transition:.2s transform,.2s border-color}.quad:hover,.quad[aria-pressed="true"]{transform:translateY(-3px);border-color:var(--teal)}.quad strong{display:block;font-size:1.35rem;color:var(--navy)}.quad small{display:block;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:800;margin-bottom:.6rem}.quad.inclusion{background:linear-gradient(145deg,#e7f8f2,#fff7dc);border-color:#7cc6b9}.detail{margin-top:1rem;background:var(--navy);color:#fff;border-radius:var(--radius);padding:1.3rem 1.5rem;min-height:82px}.detail b{color:#b8f0e4}
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:1rem;align-items:stretch}.flow-card{background:#fff;border-radius:var(--radius);padding:1.35rem;border-top:7px solid var(--blue);box-shadow:var(--shadow)}.flow-card:nth-of-type(3){border-color:var(--gold)}.flow-card:nth-of-type(5){border-color:var(--teal)}.flow-card h3{margin:.1rem 0 .7rem}.flow-card ul{padding-left:1.1rem;margin:.4rem 0}.arrow{display:grid;place-items:center;font-size:2rem;color:var(--blue);font-weight:900}.note{margin-top:1.25rem;padding:1rem 1.1rem;border-left:6px solid var(--gold);background:#fff7dc;border-radius:0 12px 12px 0}
+.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.practice{background:#fff;border-radius:var(--radius);padding:1.3rem;box-shadow:0 8px 22px rgba(16,42,67,.08)}.practice .num{font-size:.8rem;font-weight:900;color:var(--teal);letter-spacing:.12em}.practice h3{margin:.3rem 0}.practice p{color:var(--muted);margin:.25rem 0}.practice button{margin-top:.8rem;background:none;border:0;color:var(--blue);font-weight:850;padding:0;cursor:pointer}.micro{display:none;margin-top:.7rem;padding:.7rem;background:var(--mint);border-radius:10px;color:#145448}.micro.open{display:block}
+.balance{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}.panel{background:#fff;border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow)}.panel h3{margin-top:0}.panel ul{padding-left:1.2rem}.panel.strength{border-top:8px solid var(--teal)}.panel.caution{border-top:8px solid var(--coral)}
+.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.theory{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem}.theory h3{margin-top:0;color:var(--navy)}.same{color:#146c5b;font-weight:750}.different{color:#9b3a28;font-weight:750}
+.scenario{background:linear-gradient(145deg,#102a43,#164e63);color:#fff;border-radius:26px;padding:clamp(1.4rem,4vw,2.5rem);box-shadow:var(--shadow)}.answers{display:grid;gap:.8rem;margin-top:1.3rem}.answer{background:#fff;color:var(--ink);border:3px solid transparent;border-radius:14px;padding:1rem;text-align:left;font:inherit;cursor:pointer}.answer:hover{border-color:var(--gold)}.feedback{margin-top:1rem;padding:1rem;border-radius:14px;background:rgba(255,255,255,.12);min-height:58px}.feedback.good{background:#dff4ee;color:#123b33}.feedback.try{background:#fff0e8;color:#642b1e}
+.takeaway{display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem}.step{background:white;border-radius:16px;padding:1rem;border-bottom:6px solid var(--teal)}.step b{display:block;color:var(--blue);margin-bottom:.3rem}.final-question{margin-top:2rem;text-align:center;background:#fff7dc;border-radius:24px;padding:2rem;font-size:clamp(1.3rem,3vw,2.1rem);font-weight:900;color:var(--navy)}
+.references details{background:#fff;border-radius:16px;padding:1rem 1.2rem;border:1px solid var(--line)}.references summary{font-weight:850;cursor:pointer}.references p{padding-left:1.5rem;text-indent:-1.5rem;font-size:.95rem}
+footer{background:var(--navy);color:#dbe8ef;padding:2rem 5vw;text-align:center;font-size:.9rem}
+@media (max-width:850px){.hero{grid-template-columns:1fr}.hero-mark{display:none}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.practice-grid,.compare{grid-template-columns:1fr 1fr}.takeaway{grid-template-columns:1fr 1fr}.navlinks{display:none}}
+@media (max-width:560px){header{padding-bottom:3.5rem}.hero{margin-top:3rem}.matrix,.balance,.practice-grid,.compare,.takeaway{grid-template-columns:1fr}.hero h1{font-size:3.4rem}section{padding:4rem 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<nav aria-label="Primary navigation"><div class="brand">INCLUSIVE LEADERSHIP</div><div class="navlinks"><a href="#framework">Framework</a><a href="#practice">Practice</a><a href="#compare">Compare</a><a href="#challenge">Challenge</a></div></nav>
+<div class="hero">
+  <div>
+    <div class="eyebrow">Belong • Contribute • Thrive</div>
+    <h1>Lead so people can belong without blending in.</h1>
+    <p>Inclusive leadership creates the conditions for people to feel part of the group while being valued for the perspectives, identities, and talents that make them distinct.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="#framework">Explore the framework</a><button class="btn btn-ghost" id="listenBtn" type="button">▶ Listen to the overview</button></div>
+  </div>
+  <div class="hero-mark" aria-hidden="true"><div class="rings"><span>BELONG +<br>BE DISTINCT</span></div></div>
+</div>
+</header>
+
+<main id="main">
+<section id="overview">
+ <div class="section-head"><div class="kicker">The big idea</div><h2>Diversity opens the door. Inclusion shapes what happens next.</h2><p class="lead">Representation matters, but inclusive leadership asks deeper questions: Who is heard? Who influences decisions? Who can contribute without having to conform?</p></div>
+ <div class="pill-row" aria-label="Core ideas"><span class="pill">Belongingness</span><span class="pill">Value in uniqueness</span><span class="pill">Voice</span><span class="pill">Shared influence</span></div>
+</section>
+
+<section id="framework">
+ <div class="section-head"><div class="kicker">Shore et al. inclusion framework</div><h2>Two needs. Four possible experiences.</h2><p class="lead">Select each quadrant to see how belongingness and value in uniqueness interact.</p></div>
+ <div class="matrix" role="group" aria-label="Interactive inclusion framework">
+  <button class="quad" type="button" data-key="exclusion" aria-pressed="false"><small>Low belonging • Low uniqueness</small><strong>Exclusion</strong><span>Outside the group, with little recognition of distinct value.</span></button>
+  <button class="quad" type="button" data-key="assimilation" aria-pressed="false"><small>High belonging • Low uniqueness</small><strong>Assimilation</strong><span>Accepted, but mainly when fitting dominant norms.</span></button>
+  <button class="quad" type="button" data-key="differentiation" aria-pressed="false"><small>Low belonging • High uniqueness</small><strong>Differentiation</strong><span>Valued for a particular difference, yet still treated as an outsider.</span></button>
+  <button class="quad inclusion" type="button" data-key="inclusion" aria-pressed="true"><small>High belonging • High uniqueness</small><strong>Inclusion</strong><span>Accepted as an insider and encouraged to retain uniqueness.</span></button>
+ </div>
+ <div class="detail" id="matrixDetail" aria-live="polite"><b>INCLUSION:</b> “I belong here, and what I bring matters here.”</div>
+</section>
+
+<section id="model">
+ <div class="section-head"><div class="kicker">A simple systems view</div><h2>Conditions shape behaviors. Behaviors shape experiences.</h2><p class="lead">Inclusive leadership is not only a mindset. It is enacted through choices, routines, and relationships.</p></div>
+ <div class="flow" aria-label="Antecedents behaviors and outcomes model">
+  <article class="flow-card"><h3>Antecedent conditions</h3><ul><li>Fair systems</li><li>Supportive climate</li><li>Leader values</li><li>Inclusive practices</li></ul></article>
+  <div class="arrow" aria-hidden="true">→</div>
+  <article class="flow-card"><h3>Leader behaviors</h3><ul><li>Invite and listen</li><li>Share influence</li><li>Value difference</li><li>Reduce barriers</li></ul></article>
+  <div class="arrow" aria-hidden="true">→</div>
+  <article class="flow-card"><h3>Potential outcomes</h3><ul><li>Voice and trust</li><li>Commitment</li><li>Creativity</li><li>Stronger participation</li></ul></article>
+ </div>
+ <div class="note"><strong>Key point:</strong> Good intentions do not create inclusion by themselves. People must experience the leader’s values through consistent practices.</div>
+</section>
+
+<section id="practice">
+ <div class="section-head"><div class="kicker">Inclusive leadership in action</div><h2>Small practices can change who gets heard.</h2><p class="lead">Open each card for a practical example.</p></div>
+ <div class="practice-grid">
+  <article class="practice"><span class="num">01</span><h3>Invite</h3><p>Actively seek perspectives that have not surfaced.</p><button type="button" aria-expanded="false">Show example</button><div class="micro">“What viewpoint are we missing before we decide?”</div></article>
+  <article class="practice"><span class="num">02</span><h3>Vary the channel</h3><p>Offer more than one way to participate.</p><button type="button" aria-expanded="false">Show example</button><div class="micro">Collect written input before discussion, then invite verbal responses.</div></article>
+  <article class="practice"><span class="num">03</span><h3>Share influence</h3><p>Let contributions visibly shape decisions.</p><button type="button" aria-expanded="false">Show example</button><div class="micro">Name what changed because of team input, and explain what did not.</div></article>
+  <article class="practice"><span class="num">04</span><h3>Interrupt dominance</h3><p>Keep status or airtime from controlling the room.</p><button type="button" aria-expanded="false">Show example</button><div class="micro">Pause after two voices and invite people who have not spoken.</div></article>
+  <article class="practice"><span class="num">05</span><h3>Value difference</h3><p>Treat distinct experience as a resource, not a problem.</p><button type="button" aria-expanded="false">Show example</button><div class="micro">Ask how different experiences might change the team’s assumptions.</div></article>
+  <article class="practice"><span class="num">06</span><h3>Stay available</h3><p>Create predictable access and follow through.</p><button type="button" aria-expanded="false">Show example</button><div class="micro">Use regular check-ins and close the loop on concerns raised.</div></article>
+ </div>
+</section>
+
+<section id="analysis">
+ <div class="section-head"><div class="kicker">Strengths and cautions</div><h2>A useful approach, but not a simple checklist.</h2></div>
+ <div class="balance">
+  <article class="panel strength"><h3>Strengths</h3><ul><li>Connects diversity to everyday leadership behavior.</li><li>Balances group belonging with individual distinctiveness.</li><li>Centers voice, participation, and shared influence.</li><li>Can support learning, creativity, trust, and retention.</li></ul></article>
+  <article class="panel caution"><h3>Criticisms and limitations</h3><ul><li>Definitions and measures are still developing.</li><li>Behaviors overlap with servant, participative, relational, and transformational leadership.</li><li>Leader intent may differ from follower experience.</li><li>Context, status, and organizational systems can enable or constrain inclusion.</li></ul></article>
+ </div>
+</section>
+
+<section id="compare">
+ <div class="section-head"><div class="kicker">Compare and contrast</div><h2>What makes inclusive leadership distinct?</h2></div>
+ <div class="compare">
+  <article class="theory"><h3>Transformational</h3><p class="same">Shared ground: engagement, development, collective purpose.</p><p class="different">Distinct emphasis: whether people can pursue that purpose without suppressing difference.</p></article>
+  <article class="theory"><h3>Servant</h3><p class="same">Shared ground: listening, respect, follower growth.</p><p class="different">Distinct emphasis: belongingness, uniqueness, voice, and power within the group.</p></article>
+  <article class="theory"><h3>Adaptive</h3><p class="same">Shared ground: multiple perspectives and learning through challenge.</p><p class="different">Distinct emphasis: conditions that make meaningful participation possible across differences.</p></article>
+ </div>
+</section>
+
+<section id="challenge">
+ <div class="section-head"><div class="kicker">Try it</div><h2>The inclusive leadership challenge</h2></div>
+ <div class="scenario">
+  <h3>Your team is discussing a major change.</h3>
+  <p>Three people dominate the conversation. Two have not spoken. Another team member sent concerns privately before the meeting. What is the strongest inclusive response?</p>
+  <div class="answers">
+   <button class="answer" type="button" data-correct="false">A. Continue. Everyone had the same opportunity to speak.</button>
+   <button class="answer" type="button" data-correct="false">B. Call on the quietest person without warning.</button>
+   <button class="answer" type="button" data-correct="true">C. Pause and create multiple pathways for input, including discussion and written responses.</button>
+   <button class="answer" type="button" data-correct="false">D. Ask the most senior person to decide.</button>
+  </div>
+  <div class="feedback" id="feedback" aria-live="polite">Choose a response to reveal feedback.</div>
+ </div>
+</section>
+
+<section id="takeaway">
+ <div class="section-head"><div class="kicker">Put it into practice</div><h2>Five moves to remember.</h2></div>
+ <div class="takeaway">
+  <div class="step"><b>01 Notice</b>Who is present, absent, interrupted, or overlooked?</div>
+  <div class="step"><b>02 Invite</b>Create multiple ways to contribute.</div>
+  <div class="step"><b>03 Listen</b>Understand, rather than merely collect, perspectives.</div>
+  <div class="step"><b>04 Value</b>Show how contributions influence the work.</div>
+  <div class="step"><b>05 Reflect</b>Ask whether belonging requires conformity.</div>
+ </div>
+ <div class="final-question">Can people belong here without becoming more like everyone else?</div>
+</section>
+
+<section class="references" id="references">
+ <div class="section-head"><div class="kicker">References</div><h2>Sources</h2><p class="lead">This concise overview is grounded primarily in Northouse’s inclusive leadership chapter and supported by inclusion research.</p></div>
+ <details><summary>View APA-style references</summary>
+  <p>Northouse, P. G. (2025). <em>Leadership: Theory and practice</em> (10th ed.). SAGE Publications.</p>
+  <p>Roberson, Q., &amp; Perry, J. L. (2022). Inclusive leadership in thought and action: A thematic analysis. <em>Group &amp; Organization Management, 47</em>(4), 755–778. https://doi.org/10.1177/10596011211013161</p>
+  <p>Shore, L. M., Randel, A. E., Chung, B. G., Dean, M. A., Ehrhart, K. H., &amp; Singh, G. (2011). Inclusion and diversity in work groups: A review and model for future research. <em>Journal of Management, 37</em>(4), 1262–1289. https://doi.org/10.1177/0149206310385943</p>
+ </details>
+</section>
+</main>
+<footer>Designed as an approachable multimedia summary of inclusive leadership.</footer>
+
+<script>
+const matrixText={
+ exclusion:'<b>EXCLUSION:</b> “I do not feel part of the group, and what I bring is not valued.”',
+ assimilation:'<b>ASSIMILATION:</b> “I can belong, but only if I fit the dominant norms.”',
+ differentiation:'<b>DIFFERENTIATION:</b> “My difference is useful, but I am still treated as an outsider.”',
+ inclusion:'<b>INCLUSION:</b> “I belong here, and what I bring matters here.”'
+};
+document.querySelectorAll('.quad').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.quad').forEach(b=>b.setAttribute('aria-pressed','false'));
+ btn.setAttribute('aria-pressed','true');
+ document.getElementById('matrixDetail').innerHTML=matrixText[btn.dataset.key];
+}));
+document.querySelectorAll('.practice button').forEach(btn=>btn.addEventListener('click',()=>{
+ const box=btn.nextElementSibling; const open=box.classList.toggle('open');
+ btn.setAttribute('aria-expanded',String(open)); btn.textContent=open?'Hide example':'Show example';
+}));
+document.querySelectorAll('.answer').forEach(btn=>btn.addEventListener('click',()=>{
+ const fb=document.getElementById('feedback'); const correct=btn.dataset.correct==='true';
+ fb.className='feedback '+(correct?'good':'try');
+ fb.textContent=correct?'Strong choice. Multiple pathways reduce participation barriers and make room for voice without putting one person on the spot.':'Not the strongest option. Inclusive leadership notices power, status, and communication differences, then redesigns participation so more voices can influence the work.';
+}));
+const listenBtn=document.getElementById('listenBtn');
+listenBtn.addEventListener('click',()=>{
+ if(!('speechSynthesis' in window)){listenBtn.textContent='Audio is not supported in this browser';return;}
+ if(window.speechSynthesis.speaking){window.speechSynthesis.cancel();listenBtn.textContent='▶ Listen to the overview';return;}
+ const u=new SpeechSynthesisUtterance('Inclusive leadership creates the conditions for people to feel part of the group while being valued for the perspectives, identities, and talents that make them distinct. It asks who belongs, who is heard, and whose ideas influence the work.');
+ u.rate=.95; u.onend=()=>listenBtn.textContent='▶ Listen to the overview';
+ listenBtn.textContent='■ Stop audio'; window.speechSynthesis.speak(u);
+});
+</script>
+</body>
+</html>
